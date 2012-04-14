@@ -44,4 +44,6 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/unite.vim'
 Bundle 'thinca/vim-ref'
 Bundle 'thinca/vim-quickrun'
+Bundle 'git://github.com/vim-scripts/AutoComplPop.git'
 filetype plugin indent on
+
