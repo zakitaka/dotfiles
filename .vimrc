@@ -36,6 +36,8 @@ syntax on
 set hlsearch
 " コマンドライン補完を拡張モードにする
 set wildmenu
+" カラースキーム
+colorscheme molokai
 
 "*** vundle設定 ***
 set rtp+=~/dotfiles/vimfiles/vundle.git/
