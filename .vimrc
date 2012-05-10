@@ -39,6 +39,12 @@ set wildmenu
 " カラースキーム
 colorscheme molokai
 
+"*** 検出関係 ***
+" ファイル形式の検出
+filetype on
+" プラグインの検出
+filetype plugin on
+
 "*** vundle設定 ***
 set rtp+=~/dotfiles/vimfiles/vundle.git/
 call vundle#rc()
