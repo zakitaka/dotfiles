@@ -38,6 +38,8 @@ set hlsearch
 set wildmenu
 " カラースキーム
 colorscheme molokai
+" ルーラ
+set ruler
 
 "*** 検出関係 ***
 " ファイル形式の検出
