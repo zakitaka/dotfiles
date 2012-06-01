@@ -1,3 +1,6 @@
+# Alias
+alias em="emacs"
+
 # Set up the prompt
 
 autoload -Uz promptinit

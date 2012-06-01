@@ -57,3 +57,5 @@ Bundle 'thinca/vim-quickrun'
 Bundle 'git://github.com/vim-scripts/AutoComplPop.git'
 filetype plugin indent on
 
+"*** テンプレートの設定 ***
+autocmd BufNewFile *.sh 0r /Users/yamazakitakashi/.vim/template/script.txt
