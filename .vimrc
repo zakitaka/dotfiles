@@ -48,7 +48,7 @@ filetype on
 filetype plugin on
 
 "*** vundle設定 ***
-set rtp+=~/dotfiles/vimfiles/vundle.git/
+set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/unite.vim'
@@ -58,4 +58,5 @@ Bundle 'git://github.com/vim-scripts/AutoComplPop.git'
 filetype plugin indent on
 
 "*** テンプレートの設定 ***
-autocmd BufNewFile *.sh 0r /Users/yamazakitakashi/.vim/template/script.txt
+autocmd BufNewFile *.sh 0r ~/.vim/template/script.txt
+autocmd BufNewFile *.plist 0r ~/.vim/template/plist.txt
