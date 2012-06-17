@@ -16,8 +16,8 @@ LANG=ja_JP.UTF-8
 autoload -Uz compinit
 compinit
 # 先方予測機能の有効化
-autoload predict-on
-predict-on
+#autoload predict-on
+#predict-on
 
 # *** プロンプトの設定 ***
 autoload -Uz colors
@@ -38,7 +38,7 @@ esac
     
 
 # *** 履歴の設定 ***
-HISTSIZE=1000
+HISTSIZE=50000
 SAVEHIST=$HISTSIZE
 HISTFILE=~/.zsh_history
 setopt hist_ignore_all_dups # 重複の回避
@@ -51,16 +51,26 @@ setopt correct      # コマンド版もしかして機能
 setopt list_packed  # リストをつめて表示
 setopt no_list_beep # 補完候補表示時のビープ音を消音化
 
-#zstyle ':completion:*' auto-description 'specify: %d'
+# *** スタイルの設定 ***
+# リストのカラー設定
+export LSCOLORS=exfxcxdxbxegedabagacad  # lsコマンドのカラー
+zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34' # 候補リストのカラー
+#unset LSCOLORS
+#export LSCOLORS=ExFxCxdxBxegedabagacad
+#zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
+# 補完方法のグループ化
+zstyle ':completion:*' format '%B%d%b'
+zstyle ':completion:*' group-name ''
+# 補完候補の選択(２つ以上なければすぐ補完)
+zstyle ':completion:*' menu select=2
+# 補完対象を大文字小文字区別なく行う
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+
+
+
 #zstyle ':completion:*' completer _expand _complete _correct _approximate
-#zstyle ':completion:*' format 'Completing %d'
-#zstyle ':completion:*' group-name ''
-#zstyle ':completion:*' menu select=2
 #eval "$(dircolors -b)"
-#zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-#zstyle ':completion:*' list-colors ''
 #zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-#zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
 #zstyle ':completion:*' menu select=long
 #zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 #zstyle ':completion:*' use-compctl false
