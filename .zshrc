@@ -30,7 +30,7 @@ case ${UID} in
     SPROMPT="%{${fg[red]}%}correct: %R -> %r [n,y,a,e]? %{${reset_color}%}"
     ;;
   *)
-    PROMPT='${WINDOW:+"[$WINDOW]"}%{$fg[green]%}%n@%m %(!.#.$) %{$reset_color%}'
+    PROMPT='${WINDOW:+"[$WINDOW]"}%{$fg[white]%}%n@%m %(!.#.$) %{$reset_color%}'
     RPROMPT="[%{$fg[green]%}%~%{$reset_color%}]"
     SPROMPT="%{${fg[red]}%}correct: %R -> %r [n,y,a,e]? %{${reset_color}%}"
     ;;
