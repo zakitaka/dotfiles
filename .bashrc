@@ -3,6 +3,6 @@
 . ~/.git-completion.bash
 # setting alias
 alias ls='ls -F'
-alias ll='ls -la'
+alias ll='ls -l'
 alias la='ls -a'
 alias l='less'

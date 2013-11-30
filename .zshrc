@@ -1,3 +1,4 @@
+echo "source .zshrc"
 # setting alias
 alias where="command -v"
 alias j="jobs -l"
@@ -53,8 +54,8 @@ setopt no_list_beep # 補完候補表示時のビープ音を消音化
 
 # *** スタイルの設定 ***
 # リストのカラー設定
-export LSCOLORS=exfxcxdxbxegedabagacad  # lsコマンドのカラー
-zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34' # 候補リストのカラー
+export LSCOLORS=gxfxcxdxbxegedabagacad  # lsコマンドのカラー
+zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34' # 候補リストのカラー
 #unset LSCOLORS
 #export LSCOLORS=ExFxCxdxBxegedabagacad
 #zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
