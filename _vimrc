@@ -1,3 +1,5 @@
+"filetype無効化"
+filetype plugin indent off
 "vi互換無効
 set nocompatible
 
@@ -47,16 +49,28 @@ filetype on
 " プラグインの検出
 filetype plugin on
 
-"*** vundle設定 ***
-set rtp+=~/.vim/vundle.git/
-call vundle#rc()
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/unite.vim'
-Bundle 'thinca/vim-ref'
-Bundle 'thinca/vim-quickrun'
-Bundle 'git://github.com/vim-scripts/AutoComplPop.git'
-filetype plugin indent on
+
+
+
+"************************************************************************"
+"*** neobundle設定 ***
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  call neobundle#rc(expand('~/.vim/bundle/'))
+endif
+
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'git://github.com/vim-scripts/AutoComplPop.git'
+" Color Scheme
+NeoBundle 'altercation/vim-colors-solarized'
 
 "*** テンプレートの設定 ***
 autocmd BufNewFile *.sh 0r ~/.vim/template/script.txt
 autocmd BufNewFile *.plist 0r ~/.vim/template/plist.txt
+
+
+"filetype有効化"
+filetype plugin indent on
