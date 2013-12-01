@@ -67,7 +67,8 @@ zstyle ':completion:*' menu select=2
 # 補完対象を大文字小文字区別なく行う
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
 
-
+# ビープ音を無効にする
+setopt nolistbeep
 
 #zstyle ':completion:*' completer _expand _complete _correct _approximate
 #eval "$(dircolors -b)"
