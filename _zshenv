@@ -1,3 +1,7 @@
 echo "run .zshenv"
 export RBENV_ROOT=/usr/local/var/rbenv
 eval "$(rbenv init -)"
+
+# 環境変数
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
