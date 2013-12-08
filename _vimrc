@@ -64,6 +64,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'git://github.com/vim-scripts/AutoComplPop.git'
+NeoBundle 'osyo-manga/vim-over'
 " Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
 
