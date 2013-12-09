@@ -26,6 +26,8 @@ set softtabstop=2
 set smarttab
 "インデント
 set smartindent
+" 改行時のコメントが続くのを無効にする
+autocmd FileType * setlocal formatoptions-=ro
 
 "*** 表示関係 ***
 " ステータスラインを常に表示
@@ -49,7 +51,8 @@ filetype on
 " プラグインの検出
 filetype plugin on
 
-
+" キー設定
+:nnoremap <ESC><ESC> :nohlsearch<CR>
 
 
 "************************************************************************"
@@ -71,7 +74,6 @@ NeoBundle 'altercation/vim-colors-solarized'
 "*** テンプレートの設定 ***
 autocmd BufNewFile *.sh 0r ~/.vim/template/script.txt
 autocmd BufNewFile *.plist 0r ~/.vim/template/plist.txt
-
 
 "filetype有効化"
 filetype plugin indent on

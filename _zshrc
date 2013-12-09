@@ -8,6 +8,12 @@ alias la='ls -a'
 alias du="du -h"
 alias df="df -h"
 alias su="su -l"
+function cdls() {
+ # cdがaliasでループするので\をつける
+  \cd $1;
+  ls;
+}
+alias cd=cdls
 
 # ロケール設定
 LANG=ja_JP.UTF-8
