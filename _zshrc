@@ -8,6 +8,7 @@ alias la='ls -a'
 alias du="du -h"
 alias df="df -h"
 alias su="su -l"
+alias lvim="vim -c \"normal '0\""
 function cdls() {
  # cdがaliasでループするので\をつける
   \cd $1;

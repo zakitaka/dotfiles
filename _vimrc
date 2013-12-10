@@ -75,9 +75,14 @@ NeoBundle 'Align'
 " Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
 
-"*** テンプレートの設定 ***
+"*** autocmd  ***
 autocmd BufNewFile *.sh 0r ~/.vim/template/script.txt
 autocmd BufNewFile *.plist 0r ~/.vim/template/plist.txt
+" カーソル位置を記憶する
+autocmd BufReadPost *
+            \ if line("'\"") > 0 && line("'\"") <= line("$") |
+            \   exe "normal g`\"" |
+            \ endif
 
 "filetype有効化"
 filetype plugin indent on
