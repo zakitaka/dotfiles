@@ -70,9 +70,11 @@ NeoBundle 'git://github.com/vim-scripts/AutoComplPop.git'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'DrawIt'
 NeoBundle 'Align'
-NeoBundle 'tpope/vim-surround'
 :let g:Align_xstrlen = 3
 :let g:DrChipTopLvlMenu = ''
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'mattn/gist-vim'
+NeoBundle 'mattn/webapi-vim'
 " Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
 
@@ -87,3 +89,8 @@ autocmd BufReadPost *
 
 "filetype有効化"
 filetype plugin indent on
+
+" 固有の設定の読み込み
+if filereadable(expand('~/.vimrc.local'))
+  source ~/.vimrc.local
+endif
