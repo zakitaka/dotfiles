@@ -70,6 +70,7 @@ NeoBundle 'git://github.com/vim-scripts/AutoComplPop.git'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'DrawIt'
 NeoBundle 'Align'
+NeoBundle 'tpope/vim-surround'
 :let g:Align_xstrlen = 3
 :let g:DrChipTopLvlMenu = ''
 " Color Scheme
