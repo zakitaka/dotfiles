@@ -41,7 +41,7 @@ set hlsearch
 " コマンドライン補完を拡張モードにする
 set wildmenu
 " カラースキーム
-colorscheme molokai
+colorscheme default
 " ルーラ
 set ruler
 
@@ -117,6 +117,38 @@ nnoremap <Space>,   :<C-u>source $MYVIMRC<CR>
 noremap <Space>h  ^
 noremap <Space>l  $
 nnoremap <Space>/  *
+
+
+"挿入モード時、ステータスラインの色を変更
+let g:hi_insert  =  'hi StatusLine gui = None guifg = Black guibg = Yellow cterm = None ctermfg = Black ctermbg = Yellow'
+
+if has('syntax')
+  augroup InsertHook
+    autocmd!
+    autocmd InsertEnter * call s:StatusLine('Enter')
+    autocmd InsertLeave * call s:StatusLine('Leave')
+  augroup END
+endif
+
+let s:slhlcmd = ''
+function! s:StatusLine(mode)
+  if a:mode == 'Enter'
+    silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
+    silent exec g:hi_insert
+  else
+    highlight clear StatusLine
+    silent exec s:slhlcmd
+  endif
+endfunction
+
+function! s:GetHighlight(hi)
+  redir  => hl
+  exec 'highlight '.a:hi
+  redir END
+  let hl = substitute(hl,  '[\r\n]',  '',  'g')
+  let hl = substitute(hl,  'xxx',  '',  '')
+  return hl
+endfunction
 
 "filetype有効化"
 filetype plugin indent on
