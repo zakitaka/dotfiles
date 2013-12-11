@@ -9,3 +9,6 @@
 * git config でgithub.userを設定しておく
 * http://kitak.hatenablog.jp/entry/2012/11/19/205602
 * http://nukino.github.io/blog/2012/01/16/gist_vim/
+
+### vimrcをvim上から再読み込み
+    :source $MYVIMRC
