@@ -63,11 +63,13 @@ if has('vim_starting')
 endif
 
 NeoBundle 'Shougo/neocomplcache'
+:let g:neocomplcache_enable_at_startup = 1
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'git://github.com/vim-scripts/AutoComplPop.git'
+:let g:acp_enableAtStartup = 0
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'DrawIt'
 NeoBundle 'Align'
