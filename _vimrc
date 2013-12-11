@@ -95,6 +95,28 @@ autocmd BufReadPost *
             \   exe "normal g`\"" |
             \ endif
 
+" unite.vimの設定
+"" unite.vim {{{
+  " The prefix key.
+  nnoremap    [unite]   <Nop>
+  nmap    <Space>u [unite]
+   
+  " unite.vim keymap
+  nnoremap <silent> [unite]f :<C-u>Unite<Space>buffer<CR>
+  nnoremap <silent> [unite]b :<C-u>Unite<Space>bookmark<CR>
+  nnoremap <silent> [unite]m :<C-u>Unite<Space>file_mru<CR>
+  nnoremap <silent> [unite]r :<C-u>UniteWithBufferDir file<CR>
+   
+  " vinarise
+  let g:vinarise_enable_auto_detect  =  1
+   
+"" }}}
+
+" キーマップ
+noremap <Space>h  ^
+noremap <Space>l  $
+nnoremap <Space>/  *
+
 "filetype有効化"
 filetype plugin indent on
 
