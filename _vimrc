@@ -75,6 +75,7 @@ NeoBundle 'Align'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'mattn/gist-vim'
 NeoBundle 'mattn/webapi-vim'
+NeoBundle 'mattn/calendar-vim'
 " Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
 
