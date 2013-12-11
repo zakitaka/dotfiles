@@ -112,6 +112,8 @@ autocmd BufReadPost *
 "" }}}
 
 " キーマップ
+nnoremap <Space>.  :<C-u>edit $MYVIMRC<CR>
+nnoremap <Space>,   :<C-u>source $MYVIMRC<CR>
 noremap <Space>h  ^
 noremap <Space>l  $
 nnoremap <Space>/  *
