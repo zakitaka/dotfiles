@@ -80,8 +80,8 @@ NeoBundle 'mattn/gist-vim'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'mattn/calendar-vim'
 NeoBundle 'kana/vim-smartchr'
-inoremap <expr> = smartchr#loop(' = ', '=', ' == ')
-inoremap <expr> , smartchr#loop(', ', ',')
+inoremap <expr> = smartchr#loop('=', ' = ')
+inoremap <expr> , smartchr#loop(',', ', ')
 NeoBundle 'taku-o/vim-toggle'
 " Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
