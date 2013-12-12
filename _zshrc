@@ -12,7 +12,7 @@ alias lvim="vim -c \"normal '0\""
 function cdls() {
  # cdがaliasでループするので\をつける
   \cd $1;
-  ls;
+  ls -l;
 }
 alias cd=cdls
 
