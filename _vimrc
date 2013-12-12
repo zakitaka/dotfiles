@@ -83,6 +83,7 @@ NeoBundle 'kana/vim-smartchr'
 inoremap <expr> = smartchr#loop('=', ' = ')
 inoremap <expr> , smartchr#loop(',', ', ')
 NeoBundle 'taku-o/vim-toggle'
+NeoBundle 'tpope/vim-markdown'
 " Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
 
@@ -150,8 +151,20 @@ function! s:GetHighlight(hi)
   return hl
 endfunction
 
+" quickrun
+let g:quickrun_config = {}
+let g:quickrun_config.markdown = {
+      \ 'outputter' : 'null',
+      \ 'command'   : 'open',
+      \ 'cmdopt'    : '-a',
+      \ 'args'      : 'Marked',
+      \ 'exec'      : '%c %o %a %s',
+      \ }
+
 "filetype有効化"
 filetype plugin indent on
+
+
 
 " 固有の設定の読み込み
 if filereadable(expand('~/.vimrc.local'))
