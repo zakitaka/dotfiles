@@ -15,6 +15,8 @@ function cdls() {
   ls -l;
 }
 alias cd=cdls
+# 履歴のフォワードサーチを有効化
+stty stop undef
 
 # ロケール設定
 LANG=ja_JP.UTF-8
