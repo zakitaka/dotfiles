@@ -83,7 +83,7 @@ NeoBundle 'kana/vim-smartchr'
 inoremap <expr> = smartchr#loop('=', ' = ')
 inoremap <expr> , smartchr#loop(',', ', ')
 NeoBundle 'taku-o/vim-toggle'
-NeoBundle 'tpope/vim-markdown'
+NeoBundle 'rcmdnk/vim-markdown'
 " Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
 
