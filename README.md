@@ -12,3 +12,10 @@
 
 ### vimrcをvim上から再読み込み
     :source $MYVIMRC
+
+# agとUnite.vimの設定
+    $ brew install the_silver_searcher
+
+    ,g 検索
+    ,cg 単語指定検索
+    ,r 履歴検索
