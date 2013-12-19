@@ -42,6 +42,8 @@ set hlsearch
 set wildmenu
 " カラースキーム
 colorscheme default
+" 背景
+set background=dark
 " ルーラ
 set ruler
 
