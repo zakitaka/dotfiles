@@ -152,7 +152,7 @@ set wrapscan
 "*** タブ空白関係 ***
 "タブの代わりに空白
 set expandtab
-"インデント時の空白数
+"自動インデント時の空白数
 set shiftwidth=2
 "Tab が対応する空白の数
 set tabstop=2
