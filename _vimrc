@@ -3,59 +3,6 @@ filetype plugin indent off
 "vi互換無効
 set nocompatible
 
-"*** 検索関係 ***
-"インクリメンタルサーチ
-set incsearch
-" 検索の時に大文字小文字を区別しない
-set ignorecase
-" 検索の時に大文字が含まれている場合は区別して検索する
-set smartcase
-" 最後まで検索したら先頭に戻る
-set wrapscan
-
-"*** タブ空白関係 ***
-"タブの代わりに空白
-set expandtab
-"インデント時の空白数
-set shiftwidth=2
-"Tab が対応する空白の数
-set tabstop=2
-" タブやバックスペースの使用等の編集操作をするときに、タブが対応する空白の数
-set softtabstop=2
-"行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする。
-set smarttab
-"インデント
-set smartindent
-" 改行時のコメントが続くのを無効にする
-autocmd FileType * setlocal formatoptions-=ro
-
-"*** 表示関係 ***
-" ステータスラインを常に表示
-set laststatus=2
-"閉じ括弧が入力されたとき、対応する括弧を表示する
-set showmatch
-" シンタックスハイライトを有効にする
-syntax on
-" 検索結果文字列のハイライトを有効にする
-set hlsearch
-" コマンドライン補完を拡張モードにする
-set wildmenu
-" カラースキーム
-colorscheme default
-" 背景
-set background=dark
-" ルーラ
-set ruler
-
-"*** 検出関係 ***
-" ファイル形式の検出
-filetype on
-" プラグインの検出
-filetype plugin on
-
-" キー設定
-:nnoremap <ESC><ESC> :nohlsearch<CR>
-
 
 "************************************************************************"
 "*** neobundle設定 ***
@@ -118,6 +65,7 @@ autocmd BufReadPost *
 "" }}}
 
 " キーマップ
+nnoremap <ESC><ESC> :nohlsearch<CR>
 nnoremap <Space>.  :<C-u>edit $MYVIMRC<CR>
 nnoremap <Space>,   :<C-u>source $MYVIMRC<CR>
 noremap <Space>h  ^
@@ -190,11 +138,68 @@ if executable('ag')
   let g:unite_source_grep_recursive_opt = ''
 endif
 
-"filetype有効化"
-filetype plugin indent on
 
+"*** 検索関係 ***
+"インクリメンタルサーチ
+set incsearch
+" 検索の時に大文字小文字を区別しない
+set ignorecase
+" 検索の時に大文字が含まれている場合は区別して検索する
+set smartcase
+" 最後まで検索したら先頭に戻る
+set wrapscan
 
+"*** タブ空白関係 ***
+"タブの代わりに空白
+set expandtab
+"インデント時の空白数
+set shiftwidth=2
+"Tab が対応する空白の数
+set tabstop=2
+" タブやバックスペースの使用等の編集操作をするときに、タブが対応する空白の数
+set softtabstop=2
+"行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする。
+set smarttab
+"インデント
+set smartindent
+" 改行時のコメントが続くのを無効にする
+autocmd FileType * setlocal formatoptions-=ro
+
+"*** 表示関係 ***
+" ステータスラインを常に表示
+set laststatus=2
+"閉じ括弧が入力されたとき、対応する括弧を表示する
+set showmatch
+" シンタックスハイライトを有効にする
+syntax on
+" 検索結果文字列のハイライトを有効にする
+set hlsearch
+" コマンドライン補完を拡張モードにする
+set wildmenu
+" ルーラ
+set ruler
+
+" *** カラー設定***
+" 背景
+set background=dark
+" 輝度を高くする
+let g:solarized_visibility = "high"
+" コントラストを高くする
+let g:solarized_contrast = "high"
+" カラースキーム
+colorscheme solarized
+
+"*** 検出関係 ***
+" ファイル形式の検出
+filetype on
+" プラグインの検出
+filetype plugin on
+
+" *****************************************************
 " 固有の設定の読み込み
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
+
+"filetype有効化"
+filetype plugin indent on
