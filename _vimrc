@@ -36,6 +36,10 @@ NeoBundle 'rcmdnk/vim-markdown'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-indent'
+NeoBundle 'taichouchou2/vim-rails'
+NeoBundle 'romanvbabenko/rails.vim'
+NeoBundle 'The-NERD-tree'
+NeoBundle 'vim-scripts/dbext.vim'
 " Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
 
