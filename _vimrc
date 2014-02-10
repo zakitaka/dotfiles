@@ -105,7 +105,7 @@ function! s:GetHighlight(hi)
 endfunction
 
 " quickrun
-let g:quickrun_config = {}
+let g:quickrun_config = {'*': {'hook/time/enable': '1'},}
 let g:quickrun_config.markdown = {
       \ 'outputter' : 'null',
       \ 'command'   : 'open',
@@ -113,6 +113,10 @@ let g:quickrun_config.markdown = {
       \ 'args'      : 'Marked',
       \ 'exec'      : '%c %o %a %s',
       \ }
+nmap <Space>r <Plug>(quickrun)
+set splitright
+
+nnoremap <Space>o :only<CR>
 
 " ag
 " insert modeで開始
