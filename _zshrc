@@ -9,6 +9,7 @@ alias du="du -h"
 alias df="df -h"
 alias su="su -l"
 alias lvim="vim -c \"normal '0\""
+alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 function cdls() {
  # cdがaliasでループするので\をつける
   \cd $1;
