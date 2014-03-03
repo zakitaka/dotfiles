@@ -1,0 +1,14 @@
+# Update Homebrew
+update
+
+# Add Repository
+tap phinze/homebrew-cask || true
+tap jimbojsb/launchrocket
+
+install elasticsearch
+install git
+install hub
+install rbenv ruby-build
+
+install brew-cask
+cask install launchrocket
