@@ -3,12 +3,19 @@ update
 
 # Add Repository
 tap phinze/homebrew-cask || true
-tap jimbojsb/launchrocket
+tap jimbojsb/launchrocket || true
+tap homebrew/dupes || true
 
-install elasticsearch
-install git
-install hub
-install rbenv ruby-build
+install apple-gcc42 || true
+install elasticsearch || true
+install git || true
+install gmp || true
+install haskell-platform || true
+install hub || true
+install nginx || true
+install rbenv ruby-build || true
 
-install brew-cask
-cask install launchrocket
+install brew-cask || true
+cask install launchrocket || true
+cask install vagrant || true
+cask install virtualbox || true

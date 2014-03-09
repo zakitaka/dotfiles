@@ -5,3 +5,4 @@ eval "$(rbenv init -)"
 # 環境変数
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
+export PATH=~/.cabal/bin:$PATH
