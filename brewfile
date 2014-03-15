@@ -17,5 +17,6 @@ install rbenv ruby-build || true
 
 install brew-cask || true
 cask install launchrocket || true
+cask install totalfinder || true
 cask install vagrant || true
 cask install virtualbox || true
