@@ -6,3 +6,6 @@ eval "$(rbenv init -)"
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=~/.cabal/bin:$PATH
+
+# homebrew-caskのインストール先を変更
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
