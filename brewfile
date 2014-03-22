@@ -14,9 +14,13 @@ install haskell-platform || true
 install hub || true
 install nginx || true
 install rbenv ruby-build || true
+install "http://toolbelt.treasuredata.com/brew/td-agent.rb" || true
 
 install brew-cask || true
+cask install coteditor || true
+cask install firefox || true
 cask install launchrocket || true
+cask install sublime-text || true
 cask install totalfinder || true
 cask install vagrant || true
 cask install virtualbox || true
