@@ -33,20 +33,22 @@ compinit
 
 # *** プロンプトの設定 ***
 setopt prompt_subst
+autoload -Uz colors
+colors
 case ${UID} in
   0)
     PROMPT='${WINDOW:+"[$WINDOW]"}%{$fg[yellow]%}%n@%m %(!.#.$) %{$reset_color%}'
-    RPROMPT="`branch-status-check` [%{$fg[yellow]%}%~%{$reset_color%}]"
+    #RPROMPT="`branch-status-check` [%{$fg[yellow]%}%~%{$reset_color%}]"
+    RPROMPT="[%{$fg[yellow]%}%~%{$reset_color%}]"
     SPROMPT="%{${fg[red]}%}correct: %R -> %r [n,y,a,e]? %{${reset_color}%}"
     ;;
   *)
     PROMPT='${WINDOW:+"[$WINDOW]"}%{$fg[white]%}%n@%m %(!.#.$) %{$reset_color%}'
-    RPROMPT="`branch-status-check` [%{$fg[green]%}%~%{$reset_color%}]"
+    #RPROMPT="`branch-status-check` [%{$fg[green]%}%~%{$reset_color%}]"
+    RPROMPT="[%{$fg[green]%}%~%{$reset_color%}]"
     SPROMPT="%{${fg[red]}%}correct: %R -> %r [n,y,a,e]? %{${reset_color}%}"
     ;;
 esac
-autoload -Uz colors
-colors
     
 # Gitのブランチとステータスを表示する
 # {{{ methods for RPROMPT
