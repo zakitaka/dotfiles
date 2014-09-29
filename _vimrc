@@ -29,7 +29,7 @@ NeoBundle 'mattn/gist-vim'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'mattn/calendar-vim'
 NeoBundle 'kana/vim-smartchr'
-inoremap <expr> = smartchr#loop('=', ' = ')
+inoremap <expr> = smartchr#loop('=', '==', ' = ')
 inoremap <expr> , smartchr#loop(',', ', ')
 NeoBundle 'taku-o/vim-toggle'
 NeoBundle 'rcmdnk/vim-markdown'
@@ -146,6 +146,9 @@ if executable('ag')
   let g:unite_source_grep_recursive_opt = ''
 endif
 
+" bundle execでquicirunを実行する
+" set ft=ruby.bundle で有効
+let g:quickrun_config['ruby.bundle'] = { 'command': 'ruby', 'cmdopt': 'bundle exec', 'exec': '%o %c %s' }
 
 "*** 検索関係 ***
 "インクリメンタルサーチ

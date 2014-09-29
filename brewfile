@@ -3,24 +3,27 @@ update
 
 # Add Repository
 tap phinze/homebrew-cask || true
-tap jimbojsb/launchrocket || true
-tap homebrew/dupes || true
+#tap jimbojsb/launchrocket || true
+#tap homebrew/dupes || true
 
 install apple-gcc42 || true
 install elasticsearch || true
 install git || true
-install gmp || true
-install haskell-platform || true
+#install gmp || true
+#install haskell-platform || true
 install hub || true
-install nginx || true
+#install nginx || true
 install rbenv ruby-build || true
+install readline || true
+link readline --force
+install rsense || true
 install "http://toolbelt.treasuredata.com/brew/td-agent.rb" || true
 
-install brew-cask || true
-cask install coteditor || true
-cask install firefox || true
-cask install launchrocket || true
-cask install sublime-text || true
-cask install totalfinder || true
-cask install vagrant || true
-cask install virtualbox || true
+#install brew-cask || true
+#cask install coteditor || true
+#cask install firefox || true
+#cask install launchrocket || true
+#cask install sublime-text || true
+#cask install totalfinder || true
+#cask install vagrant || true
+#cask install virtualbox || true
