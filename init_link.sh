@@ -20,4 +20,5 @@ source ~/.zprofile
 source ~/.zshrc
 
 ### brewfileの読み込み
+brew tap homebrew/boneyard
 brew bundle
