@@ -10,40 +10,48 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
   call neobundle#begin(expand('~/.vim/bundle/'))
   NeoBundleFetch 'Shougo/neobundle.vim'
+
+  NeoBundle 'Shougo/neocomplcache'
+  :let g:neocomplcache_enable_at_startup = 1
+  NeoBundle 'Shougo/unite.vim'
+  NeoBundle 'Shougo/vimproc'
+  NeoBundle 'thinca/vim-ref'
+  NeoBundle 'thinca/vim-quickrun'
+  NeoBundle 'git://github.com/vim-scripts/AutoComplPop.git'
+  :let g:acp_enableAtStartup = 0
+  NeoBundle 'osyo-manga/vim-over'
+  NeoBundle 'DrawIt'
+  NeoBundle 'Align'
+  :let g:Align_xstrlen = 3
+  :let g:DrChipTopLvlMenu = ''
+  NeoBundle 'tpope/vim-surround'
+  NeoBundle 'mattn/gist-vim'
+  NeoBundle 'mattn/webapi-vim'
+  NeoBundle 'mattn/calendar-vim'
+  NeoBundle 'kana/vim-smartchr'
+  inoremap <expr> = smartchr#loop('=', '==', ' = ')
+  inoremap <expr> , smartchr#loop(',', ', ')
+  NeoBundle 'taku-o/vim-toggle'
+  NeoBundle 'rcmdnk/vim-markdown'
+  NeoBundle 'tpope/vim-commentary'
+  "NeoBundle 'kana/vim-textobj-user'
+  "NeoBundle 'kana/vim-textobj-indent'
+  NeoBundle 'taichouchou2/vim-rails'
+  NeoBundle 'romanvbabenko/rails.vim'
+  NeoBundle 'The-NERD-tree'
+  NeoBundle 'vim-scripts/dbext.vim'
+  " Color Scheme
+  NeoBundle 'altercation/vim-colors-solarized'
+  " Rubocop
+  NeoBundle 'scrooloose/syntastic'
+  let g:syntastic_ruby_checkers = ['rubocop']
+  " Snippet
+  NeoBundle "Shougo/neosnippet"
+  NeoBundle "Shougo/neosnippet-snippets"
+
   call neobundle#end()
 endif
 
-NeoBundle 'Shougo/neocomplcache'
-:let g:neocomplcache_enable_at_startup = 1
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'thinca/vim-ref'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'git://github.com/vim-scripts/AutoComplPop.git'
-:let g:acp_enableAtStartup = 0
-NeoBundle 'osyo-manga/vim-over'
-NeoBundle 'DrawIt'
-NeoBundle 'Align'
-:let g:Align_xstrlen = 3
-:let g:DrChipTopLvlMenu = ''
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'mattn/gist-vim'
-NeoBundle 'mattn/webapi-vim'
-NeoBundle 'mattn/calendar-vim'
-NeoBundle 'kana/vim-smartchr'
-inoremap <expr> = smartchr#loop('=', '==', ' = ')
-inoremap <expr> , smartchr#loop(',', ', ')
-NeoBundle 'taku-o/vim-toggle'
-NeoBundle 'rcmdnk/vim-markdown'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'kana/vim-textobj-user'
-NeoBundle 'kana/vim-textobj-indent'
-NeoBundle 'taichouchou2/vim-rails'
-NeoBundle 'romanvbabenko/rails.vim'
-NeoBundle 'The-NERD-tree'
-NeoBundle 'vim-scripts/dbext.vim'
-" Color Scheme
-NeoBundle 'altercation/vim-colors-solarized'
 
 "*** autocmd  ***
 autocmd BufNewFile *.sh 0r ~/.vim/template/script.txt
