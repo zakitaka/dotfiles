@@ -1,11 +1,14 @@
-echo "run .zshenv"
-export RBENV_ROOT=/usr/local/var/rbenv
-eval "$(rbenv init -)"
-
-# 環境変数
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/sbin:$PATH
+### 環境変数
 export PATH=~/.cabal/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:$PATH
 
 # homebrew-caskのインストール先を変更
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# terafform
+export PATH=$PATH:$HOME/.terraform-0.6.16/
+
+# echo "run .zshenv"
+export RBENV_ROOT=/usr/local/var/rbenv
+eval "$(rbenv init -)"

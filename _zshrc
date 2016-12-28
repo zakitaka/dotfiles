@@ -1,4 +1,4 @@
-echo "source .zshrc"
+# echo "source .zshrc"
 # setting alias
 alias where="command -v"
 alias j="jobs -l"
@@ -17,6 +17,19 @@ function cdls() {
   ls -l;
 }
 alias cd=cdls
+# git alias
+alias ga='git add'
+alias gb='git branch'
+alias gc='git commit -v'
+alias gco='git checkout'
+alias gcob='git checkout -b'
+alias gcod='git checkout -d'
+alias gd='git diff'
+alias gl='git log'
+alias gr='git remote'
+alias gs='git status'
+alias gf='git fetch --prune'
+
 # 履歴のフォワードサーチを有効化
 stty stop undef
 
@@ -32,68 +45,52 @@ compinit
 #predict-on
 
 # *** プロンプトの設定 ***
+autoload -Uz vcs_info
+
+## プロンプトが表示される毎に実行される関数
+precmd () { vcs_info }
+
+## prompt
+### vcs_info 表示内容をカスタマイズ
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+
 setopt prompt_subst
-autoload -Uz colors
-colors
-case ${UID} in
-  0)
-    PROMPT='${WINDOW:+"[$WINDOW]"}%{$fg[green]%}%n@%m %(!.#.$) %{$reset_color%}'
-    #RPROMPT="`branch-status-check` [%{$fg[yellow]%}%~%{$reset_color%}]"
-    RPROMPT="[%{$fg[red]%}%~%{$reset_color%}]"
-    SPROMPT="%{${fg[red]}%}correct: %R -> %r [n,y,a,e]? %{${reset_color}%}"
-    ;;
-  *)
-    PROMPT='${WINDOW:+"[$WINDOW]"}%{$fg[green]%}%n@%m %(!.#.$) %{$reset_color%}'
-    #RPROMPT="`branch-status-check` [%{$fg[green]%}%~%{$reset_color%}]"
-    RPROMPT="[%{$fg[green]%}%~%{$reset_color%}]"
-    SPROMPT="%{${fg[red]}%}correct: %R -> %r [n,y,a,e]? %{${reset_color}%}"
-    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-      PROMPT="%{${fg[red]}%}(ssh)${PROMPT}"
-    ;;
-esac
-    
-# Gitのブランチとステータスを表示する
-# {{{ methods for RPROMPT
-# fg[color]表記と$reset_colorを使いたい
-# @see https://wiki.archlinux.org/index.php/zsh
-function branch-status-check {
-    local prefix branchname suffix
-        # .gitの中だから除外
-        if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
-            return
-        fi
-        branchname=`get-branch-name`
-        # ブランチ名が無いので除外
-        if [[ -z $branchname ]]; then
-            return
-        fi
-        prefix=`get-branch-status` #色だけ返ってくる
-        suffix='%{'${reset_color}'%}'
-        echo ${prefix}${branchname}${suffix}
-}
-function get-branch-name {
-    # gitディレクトリじゃない場合のエラーは捨てます
-    echo `git rev-parse --abbrev-ref HEAD 2> /dev/null`
-}
-function get-branch-status {
-    local res color
-        output=`git status --short 2> /dev/null`
-        if [ -z "$output" ]; then
-            res=':' # status Clean
-            color='%{'${fg[green]}'%}'
-        elif [[ $output =~ "[\n]?\?\? " ]]; then
-            res='?:' # Untracked
-            color='%{'${fg[yellow]}'%}'
-        elif [[ $output =~ "[\n]? M " ]]; then
-            res='M:' # Modified
-            color='%{'${fg[red]}'%}'
-        else
-            res='A:' # Added to commit
-            color='%{'${fg[cyan]}'%}'
-        fi
-        # echo ${color}${res}'%{'${reset_color}'%}'
-        echo ${color} # 色だけ返す
-}
+
+### プロンプトにvcs_infoが生成した情報を表示する
+PROMPT="%F{green}╭─[%*] %~ %f"'${vcs_info_msg_0_}'"
+%F{green}╰─%B$%b %f"
+
+# vcs_infoロード    
+# autoload -Uz vcs_info    
+# autoload -Uz colors
+# colors
+# setopt prompt_subst
+# # vcsの表示    
+# zstyle ':vcs_info:*' formats '%s][* %F{green}%b%f'    
+# zstyle ':vcs_info:*' actionformats '%s][* %F{green}%b%f(%F{red}%a%f)'   
+# # プロンプト表示直前にvcs_info呼び出し    
+# precmd() { vcs_info }    
+# case ${UID} in
+#   0)
+#     PROMPT='${WINDOW:+"[$WINDOW]"}%{$fg[green]%}%n@%m %(!.#.$) %{$reset_color%}'
+#     RPROMPT="(${vcs_info_msg_0_}) [%{$fg[yellow]%}%~%{$reset_color%}]"
+#     # RPROMPT="[%{$fg[red]%}%~%{$reset_color%}]"
+#     SPROMPT="%{${fg[red]}%}correct: %R -> %r [n,y,a,e]? %{${reset_color}%}"
+#     ;;
+#   *)
+#     PROMPT='${WINDOW:+"[$WINDOW]"}%{$fg[green]%}%n@%m %(!.#.$) %{$reset_color%}'
+#     #RPROMPT="`branch-status-check` [%{$fg[green]%}%~%{$reset_color%}]"
+#     RPROMPT="(${vcs_info_msg_0_}) [%{$fg[yellow]%}%~%{$reset_color%}]"
+#     # RPROMPT="[%{$fg[green]%}%~%{$reset_color%}]"
+#     SPROMPT="%{${fg[red]}%}correct: %R -> %r [n,y,a,e]? %{${reset_color}%}"
+#     [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
+#       PROMPT="%{${fg[red]}%}(ssh)${PROMPT}"
+#     ;;
+# esac
 
 # *** 履歴の設定 ***
 HISTSIZE=50000
@@ -140,3 +137,6 @@ setopt nolistbeep
 
 # 固有の設定の読み込み
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
+
+# .zshenvの読み込み
+[ -f ~/.zshenv ] && source ~/.zshenv

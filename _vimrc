@@ -14,6 +14,8 @@ if has('vim_starting')
   NeoBundle 'Shougo/neocomplcache'
   :let g:neocomplcache_enable_at_startup = 1
   NeoBundle 'Shougo/unite.vim'
+  " uniteでfile_mruを使用可能にする.
+  NeoBundle 'Shougo/neomru'
   NeoBundle 'Shougo/vimproc'
   NeoBundle 'thinca/vim-ref'
   NeoBundle 'thinca/vim-quickrun'
@@ -48,6 +50,8 @@ if has('vim_starting')
   " Snippet
   NeoBundle "Shougo/neosnippet"
   NeoBundle "Shougo/neosnippet-snippets"
+  " WakaTime
+  " NeoBundle 'wakatime/vim-wakatime'
 
   call neobundle#end()
 endif
@@ -69,6 +73,7 @@ autocmd BufReadPost *
   nmap    <Space>u [unite]
    
   " unite.vim keymap
+  nnoremap <silent> [unite]f :<C-u>Unite<Space>file<CR>
   nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
   nnoremap <silent> [unite]m :<C-u>Unite<Space>file_mru<CR>
   nnoremap <silent> [unite]r :<C-u>UniteWithBufferDir file<CR>
