@@ -25,10 +25,19 @@ alias gco='git checkout'
 alias gcob='git checkout -b'
 alias gcod='git checkout -d'
 alias gd='git diff'
-alias gl='git log'
+alias gl='git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s"'
 alias gr='git remote'
 alias gs='git status'
 alias gf='git fetch --prune'
+# vagrant alias
+alias v='vagrant'
+alias vs='vagrant ssh'
+alias vup='vagrant up'
+alias vr='vagrant rsync'
+alias vra='vagrant rsync-auto'
+alias vp='vagrant provision'
+# docker alias
+alias d='docker'
 
 # 履歴のフォワードサーチを有効化
 stty stop undef
